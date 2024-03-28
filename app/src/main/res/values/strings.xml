@@ -1,0 +1,58 @@
+<resources>
+    <item name="charges" type="id" />
+
+    <string name="app_name">Claco</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="cannot_be_blank">Cannot be blank</string>
+    <string name="facebook_app_id">390847314598290</string>
+    <string name="enaam">My Rewards</string>
+
+    <!--Menu item texts -->
+
+    <string name="verify_text">We have sent you  OTP on</string>
+    <string name="item_2">Electronics</string>
+    <string name="item_3">Lifestyle</string>
+    <string name="item_4">Home Appliances</string>
+    <string name="item_5">Books \u0026 More</string>
+    <string name ="signup_login_text"><font color='#000000'>Don \' t? Have An Account ?</font><font color='#CBA9A9'>Click here</font></string>
+    <string name ="login_signup_text"><font color='#000000'>Already have an account ? </font><font color='#CBA9A9'>Click here</font></string>
+
+    <string name="my_profile">My Profile</string>
+    <string name="my_orders">Your Orders</string>
+    <string name="MemberShip">MemberShip</string>
+    <string name="my_cart">My Cart</string>
+    <string name="my_wishlist">My Wishlist</string>
+    <string name="my_account">My Account</string>
+    <string name="cancel_product">Cancel Product</string>
+    <string name="return_product">Return Product</string>
+    <string name="share">Share App</string>
+    <string name="help_support">Help \u0026 Support</string>
+    <string name="help_center">Chat with us</string>
+
+    <!--admod-->
+    <string name="whatsapp_number" />
+    <string name="item_area">area</string>
+    <string name="item_zip">zip</string>
+    <string name="item_state">state</string>
+
+    <string name="faq1">\u2022 Can I add more than one delivery address in an account?</string>
+    <string name="faq11">Yes, you can add multiple delivery addresses in your Kifayati store account. However, remember that all items placed in a single order can only be delivered to one address. If you want different products delivered to different address you need to place them as separate orders.</string>
+    <string name="faq2">\u2022 Can I have multiple accounts for members in my family with different mobile number and email address but same or common delivery address?</string>
+    <string name="faq22">Yes, we do understand the importance of time and the toil involved in shopping groceries. Up to three members in a family can have the same address provided the email address and phone number associated with the accounts are unique.</string>
+    <string name="faq3">\u2022 Can I have different city addresses under one account and still place orders for multiple cities?</string>
+    <string name="faq33">Yes, you can place orders for multiple cities.</string>
+    <string name="faq4">\u2022 What are the modes of payment?</string>
+    <string name="faq44">You can pay for your order on Claco store using the following modes of payment:\na. Cash on delivery (COD)\nb. Credit and debit cards (VISA / Mastercard / Rupay)\nIf the order has to be left at the security gate, please continue to pay online via wallets, UPI, net banking, or cards as you are doing now.\nIf you choose COD as the payment method, you will need to pay our delivery executive in cash at the time of delivery.\nTo minimize contact, please give the executive the exact amount or the order total rounded up to the nearest hundred. For example, if your order value is Rs.1,235, please pay exactly this amount or Rs.1,300.\nThe executive will not be able to return any change. Any balance due will be credited directly to your Claco wallet which you can utilise in your next order.\nThe option is currently available only for Claco mobile app users.</string>
+    <string name="faq5">\u2022 Are there any other charges or taxes in addition to the price shown? Is VAT added to the invoice?</string>
+    <string name="faq55">There is no VAT. However, GST will be applicable as per Government Regulizations.</string>
+    <string name="faq6">\u2022 Is it safe to use my credit/ debit card on Claco ?</string>
+    <string name="faq66">Yes it is absolutely safe to use your card on Claco store. A recent directive from RBI makes it mandatory to have an additional authentication pass code verified by VISA (VBV) or MSC (Master Secure Code) which has to be entered by online shoppers while paying online using visa or master credit card. It means extra security for customers, thus making online shopping safer</string>
+    <string name="faq7">\u2022 If I pay by credit card how do I get the amount back for items not delivered?</string>
+    <string name="faq77">If we are not able to delivery all the products in your order and you have already paid for them online, the balance amount will be refunded to your Claco.in account as store credit and you can use it at any time against your future orders. Should you want it to be credited to your bank account please contact our customer support team and we will refund it back on to your card.</string>
+    <string name="faq8">\u2022 Return policy &amp; time limits:</string>
+    <string name="faq88">We have a "no questions asked return and refund policy" which entitles all our members to return the product at the time of delivery if due to some reason they are not satisfied with the quality or freshness of the product. We will take the returned product back with us and issue a credit note for the value of the return products which will be credited to your account on the Site. This can be used to pay your subsequent shopping bills..\n\n1. Perishable goods: Within 48 hours from the delivery date.\n2. Other goods : Within 7 days from the delivery date.</string>
+</resources>

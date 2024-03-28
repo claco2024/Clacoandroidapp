@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:elevation="@dimen/_10sdp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_nmber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+
+                    <claco.store.customecomponent.CustomTextView
+                        style="@style/ganaral_lable_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_3sdp"
+                        android:text="Login"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:font_name="NunitoBold.ttf" />
+
+
+                    <claco.store.customecomponent.CustomEdittext
+                        android:id="@+id/etEmail"
+                        style="@style/ganaral_edittext_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_stroke"
+                        android:hint="Enter Phone Number"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:padding="@dimen/_10sdp"
+                        android:textSize="@dimen/_14sdp"
+                        app:font_name="NunitoLight.ttf" />
+
+
+                    <claco.store.customecomponent.CustomEdittext
+                        android:id="@+id/etReferCode"
+                        android:visibility="gone"
+                        style="@style/ganaral_edittext_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_stroke"
+                        android:hint="Enter refer code"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:padding="@dimen/_10sdp"
+                        android:textSize="@dimen/_14sdp"
+                        app:font_name="NunitoLight.ttf" />
+
+                    <claco.store.customecomponent.CustomEdittext
+                        android:id="@+id/et_Password"
+                        style="@style/ganaral_edittext_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_stroke"
+                        android:hint="Enter password"
+                        android:inputType="textPassword"
+                        android:maxLength="12"
+                        android:padding="@dimen/_10sdp"
+                        android:textSize="@dimen/_14sdp"
+                        app:font_name="NunitoLight.ttf" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_OTP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+
+                    <claco.store.customecomponent.CustomTextView
+                        style="@style/ganaral_lable_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_3sdp"
+                        android:text="Enter OTP"
+                        android:textSize="@dimen/_12sdp"
+                        app:font_name="NunitoBold.ttf" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <claco.store.customecomponent.CustomEdittext
+                            android:id="@+id/et1"
+                            style="@style/ganaral_edittext_style"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:background="@drawable/rectangle"
+                            android:hint=" "
+                            android:maxLength="1"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_14sdp"
+                            app:font_name="NunitoLight.ttf" />
+
+                        <claco.store.customecomponent.CustomEdittext
+                            android:id="@+id/et2"
+                            style="@style/ganaral_edittext_style"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:background="@drawable/rectangle"
+                            android:maxLength="1"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_14sdp"
+                            app:font_name="NunitoLight.ttf" />
+
+                        <claco.store.customecomponent.CustomEdittext
+                            android:id="@+id/et3"
+                            style="@style/ganaral_edittext_style"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:background="@drawable/rectangle"
+                            android:textSize="@dimen/_14sdp"
+                            app:font_name="NunitoLight.ttf" />
+
+                        <claco.store.customecomponent.CustomEdittext
+                            android:id="@+id/et4"
+                            style="@style/ganaral_edittext_style"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="@drawable/rectangle"
+                            android:maxLength="1"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/_14sdp"
+                            app:font_name="NunitoLight.ttf" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <claco.store.customecomponent.CustomTextView
+                        style="@style/ganaral_lable_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_3sdp"
+                        android:text="Password"
+                        android:textSize="@dimen/_12sdp"
+                        app:font_name="NunitoBold.ttf" />
+
+                    <claco.store.customecomponent.CustomEdittext
+                        android:id="@+id/etPassword"
+                        style="@style/ganaral_edittext_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Password"
+                        android:inputType="textPassword"
+                        android:textSize="@dimen/_14sdp"
+                        app:font_name="NunitoLight.ttf" />
+
+                </LinearLayout>
+
+
+                <claco.store.customecomponent.CustomButton
+                    android:id="@+id/tvLoginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_below="@+id/tvForgotPassword"
+                    android:layout_marginLeft="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginRight="@dimen/_35sdp"
+                    android:background="@drawable/capsulebutton_1"
+                    android:elevation="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="Login"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_17sdp" />
+
+                <claco.store.customecomponent.CustomButton
+                    android:id="@+id/tvRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_below="@+id/tvForgotPassword"
+                    android:layout_marginLeft="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginRight="@dimen/_35sdp"
+                    android:background="@drawable/capsulebutton_1"
+                    android:elevation="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="Register"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_17sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black_trans" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <claco.store.customecomponent.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="or connect with"
+                        android:textColor="@color/black_trans"
+                        android:textSize="@dimen/_12sdp"
+                        app:font_name="NunitoRegular.ttf" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black_trans" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+
+                <claco.store.customecomponent.CustomTextView
+                    style="@style/ganaral_facebook_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="Facebook"
+                    android:visibility="gone"
+                    app:font_name="NunitoExtraBold.ttf" />
+
+
+                <claco.store.customecomponent.CustomTextView
+                    style="@style/ganaral_google_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="Google"
+                    android:visibility="gone"
+                    app:font_name="NunitoExtraBold.ttf" />
+
+
+            </LinearLayout>
+
+            <claco.store.customecomponent.CustomTextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:text="Forgot Password?"
+                android:textColor="@color/blue_900"
+                android:textSize="@dimen/_13sdp"
+                app:font_name="NunitoSemiBold.ttf" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <claco.store.customecomponent.CustomTextView
+                    android:id="@+id/tvDontHaveAccount"
+                    style="@style/ganaral_edittext_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Don't have an account?"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    app:font_name="NunitoRegular.ttf" />
+
+                <claco.store.customecomponent.CustomTextView
+                    android:id="@+id/tvSignupbtn"
+                    style="@style/ganaral_edittext_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvDontHaveAccount"
+                    android:text=" Sign Up"
+                    android:textColor="#cd4626"
+                    android:textSize="@dimen/_14sdp"
+                    app:font_name="NunitoBold.ttf" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_off"
+    android:orientation="vertical">
+
+    <include layout="@layout/header" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <EditText
+                android:id="@+id/etPromoCode"
+                android:layout_width="@dimen/_190sdp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center"
+                android:hint="Enter promo code here..."
+                android:textColor="@color/grey_700" />
+
+            <claco.store.customecomponent.CustomTextView
+                android:id="@+id/tvApply"
+                style="@style/ganaral_edittext_style"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/gradient"
+                android:gravity="center"
+                android:inputType="textEmailAddress"
+                android:text="Apply"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                app:font_name="NunitoRegular.ttf" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <claco.store.customecomponent.CustomTextView
+        android:id="@+id/tv_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="OR"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:font_name="NunitoRegular.ttf" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp" />
+
+    <LinearLayout
+        android:id="@+id/ll_coupon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp">
+
+            <claco.store.customecomponent.CustomTextView
+                android:id="@+id/tvCoupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text=" "
+                android:textColor="@color/black" />
+
+
+            <claco.store.customecomponent.CustomTextView
+                android:id="@+id/tvValid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:text="Available"
+                android:textColor="@color/greenprice"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </RelativeLayout>
+
+        <claco.store.customecomponent.CustomTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text=" "
+            android:textColor="@color/black_trans" />
+
+        <claco.store.customecomponent.CustomTextView
+            android:id="@+id/tvNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text=" "
+            android:textColor="@color/black_trans" />
+
+        <claco.store.customecomponent.CustomTextView
+            android:id="@+id/tvUseCoupon"
+            style="@style/ganaral_edittext_style"
+            android:layout_width="61dp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@color/grey_500"
+            android:gravity="center"
+            android:inputType="textEmailAddress"
+            android:text="Apply"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            app:font_name="NunitoRegular.ttf" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llNoCoupon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please try again later."
+            android:textColor="@color/grey_900" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No coupons available at this time."
+            android:textColor="@color/grey_900" />
+
+    </LinearLayout>
+</LinearLayout>

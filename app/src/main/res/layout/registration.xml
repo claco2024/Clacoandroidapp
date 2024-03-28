@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <!--    <ScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:fillViewport="true">-->
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:elevation="@dimen/_10sdp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/tv_back"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/ivBack"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <claco.store.customecomponent.CustomTextView
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+
+        android:drawablePadding="16dp"
+        android:drawableTint="@color/white"
+        android:text="Registration"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/cardView5"
+        app:layout_constraintStart_toStartOf="@+id/cardView5"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="112dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_back">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_3sdp"
+                            android:text="Please fill up following details"
+                            android:textSize="@dimen/_14sdp"
+                            app:font_name="NunitoBold.ttf" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:hint="Full Name"
+                            app:endIconMode="clear_text"
+                            app:helperText="* required"
+                            app:helperTextEnabled="true"
+                            app:helperTextTextColor="@color/red_500">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="text" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Phone number"
+                            app:endIconMode="clear_text"
+                            app:helperText="* required"
+                            app:helperTextEnabled="true"
+                            app:helperTextTextColor="@color/red_500">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etContact"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLength="10" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Password"
+                            app:endIconMode="clear_text"
+                            app:helperText="* required"
+                            app:helperTextEnabled="true"
+                            app:helperTextTextColor="@color/red_500">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPassword"
+                                android:maxLength="12" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Confirm password"
+                            app:endIconMode="clear_text"
+                            app:helperText="* required"
+                            app:helperTextEnabled="true"
+                            app:helperTextTextColor="@color/red_500">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etConfirmPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPassword"
+                                android:maxLength="12" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:id="@+id/refrral_box"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Referral Number"
+                            app:endIconMode="clear_text"
+                            app:helperTextTextColor="@color/red_500">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/reffral_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLength="10" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <TextView
+                            android:id="@+id/reffral_btn"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            style="@style/general_edittext_style"
+                            android:layout_width="match_parent"
+                            android:gravity="end"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="Have a referral code?"
+                            android:textColor="@color/black"
+                            android:textSize="12dp"
+                            android:fontFamily="sans-serif-medium"  />
+                        <!--                        <EditText-->
+                        <!--                            android:id="@+id/etName"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:hint="Full Name"-->
+                        <!--                            android:inputType="text"-->
+                        <!--                            android:textColor="@color/myblack"-->
+                        <!--                            android:textSize="@dimen/_14sdp"-->
+                        <!--                            app:font_name="NunitoLight.ttf" />-->
+
+                    </LinearLayout>
+
+
+                    <claco.store.customecomponent.CustomTextView
+                        style="@style/ganaral_lable_style"
+                        android:paddingStart="@dimen/_3sdp"
+                        android:text="Email"
+                        android:textSize="@dimen/_12sdp"
+                        android:visibility="gone"
+                        app:font_name="NunitoBold.ttf" />
+
+
+                    <claco.store.customecomponent.CustomEdittext
+                        android:id="@+id/etEmail"
+                        style="@style/general_edittext_style"
+                        android:hint="Email Address"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/myblack"
+                        android:textSize="@dimen/_14sdp"
+                        android:visibility="gone"
+                        app:font_name="NunitoLight.ttf" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_warning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:text="Warning : Password must be 8 characters with at least 1 Upper Case, 1 lower case, and 1 numeric character!!"
+                    android:textColor="@color/orange_900"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:buttonTint="@color/colorAccent"
+                    android:textColor="@color/black"
+                    android:theme="@style/MyCheckBox" />
+
+
+                <claco.store.customecomponent.CustomTextView
+                    style="@style/general_edittext_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/checkbox"
+                    android:layout_alignBottom="@+id/checkbox"
+                    android:layout_toEndOf="@+id/checkbox"
+                    android:layout_toRightOf="@+id/checkbox"
+                    android:gravity="center_vertical"
+                    android:text="I have read terms and Conditions."
+                    android:textColor="@color/black_trans"
+                    android:textColorLink="@color/blue_700"
+                    app:font_name="NunitoRegular.ttf" />
+
+            </RelativeLayout>
+
+            <claco.store.customecomponent.CustomButton
+                android:id="@+id/tvRegisterButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_below="@+id/tvForgotPassword"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="24dp"
+                android:background="@drawable/capsulebutton_1"
+                android:gravity="center"
+                android:text="Register"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17sdp" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <claco.store.customecomponent.CustomTextView
+                    style="@style/ganaral_facebook_style"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="Facebook"
+                    android:visibility="gone"
+                    app:font_name="NunitoExtraBold.ttf" />
+
+                <claco.store.customecomponent.CustomTextView
+                    style="@style/ganaral_google_style"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="Google"
+                    android:visibility="gone"
+                    app:font_name="NunitoExtraBold.ttf" />
+
+            </LinearLayout>
+
+
+
+                <TextView
+                    android:id="@+id/tvSignIn"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    style="@style/general_edittext_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/login_signup_text"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="sans-serif-medium"  />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--    </ScrollView>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

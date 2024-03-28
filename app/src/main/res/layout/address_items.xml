@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageView
+                android:id="@+id/iv_radioOn"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+
+                android:layout_weight=".1"
+                android:src="@drawable/radio_on"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/ivradio"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+
+                android:layout_weight=".1"
+                android:src="@drawable/radio_off"
+                android:visibility="gone" />
+
+            <claco.store.customecomponent.CustomTextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+
+                android:layout_weight="1.9"
+                android:text="Rashmi Dwivedi"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:font_name="NunitoSemiBold.ttf" />
+
+        </LinearLayout>
+
+
+        <claco.store.customecomponent.CustomTextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="8875467677"
+            android:textColor="@color/myblack"
+            android:textSize="@dimen/_11sdp"
+            app:font_name="NunitoRegular.ttf" />
+
+        <claco.store.customecomponent.CustomTextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:text="H.No4, K.c nath road,Mumbai 226001,Lalbagh Uttar Pradesh"
+            android:textColor="@color/myblack"
+            android:textSize="@dimen/_12sdp"
+            app:font_name="NunitoRegular.ttf" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_width_small"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/grey_light" />
+    </LinearLayout>
+
+
+</LinearLayout>

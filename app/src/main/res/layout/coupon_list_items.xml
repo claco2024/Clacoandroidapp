@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp">
+
+            <claco.store.customecomponent.CustomTextView
+                android:id="@+id/tvCoupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/rectangle"
+                android:drawableLeft="@drawable/ic_discount"
+                android:drawablePadding="@dimen/_8sdp"
+                android:padding="@dimen/_5sdp"
+                android:text=" CouponCode"
+                android:textColor="@color/black" />
+
+
+            <claco.store.customecomponent.CustomTextView
+                android:id="@+id/tvValid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:text=" "
+                android:textColor="@color/greenprice"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@color/grey_50" />
+
+        <claco.store.customecomponent.CustomTextView
+            android:id="@+id/tvPromocode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="coupon code "
+
+            android:textColor="@color/blue_900" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@color/grey_100" />
+
+        <claco.store.customecomponent.CustomTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text=" "
+
+            android:textColor="@color/black_trans" />
+
+        <claco.store.customecomponent.CustomTextView
+            android:id="@+id/tvNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text=" "
+            android:textColor="@color/black_trans" />
+
+        <claco.store.customecomponent.CustomTextView
+            android:id="@+id/tvUseCoupon"
+            style="@style/ganaral_edittext_style"
+            android:layout_width="61dp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@color/green_600"
+            android:gravity="center"
+            android:inputType="textEmailAddress"
+            android:text=" Apply"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,345 @@
+package claco.store.Main;
+
+import android.animation.ObjectAnimator;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import claco.store.Activities.ForgotPassword;
+import claco.store.R;
+import claco.store.util.CustomLoader;
+import claco.store.utils.AppSettings;
+import claco.store.utils.Preferences;
+import claco.store.utils.Utils;
+import claco.store.utils.WebService;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import es.dmoral.toasty.Toasty;
+
+public class LoginActivity3 extends AppCompatActivity {
+
+
+    //Textview
+    TextView tvSignupbtn;
+    TextView tvLoginButton;
+    TextView tvForgotPassword;
+
+    //loader
+    CustomLoader loader;
+
+    //LinearLayout
+    LinearLayout llmain;
+    LinearLayout ll_nmber;
+    LinearLayout ll_OTP;
+    private boolean playAnimations = true;
+
+    //Textview
+   public static TextView etEmail;
+   public static TextView etReferCode;
+    TextView etPassword;
+String ReferCode="";
+    Preferences pref;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+       // setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login3);
+
+        llmain = findViewById(R.id.llmain);
+        tvLoginButton = findViewById(R.id.tvLoginButton);
+
+        etEmail = findViewById(R.id.etEmail);
+        etReferCode = findViewById(R.id.etReferCode);
+        etPassword = findViewById(R.id.etPassword);
+        tvForgotPassword = findViewById(R.id.tvForgotPassword);
+        ll_nmber = findViewById(R.id.ll_nmber);
+        ll_OTP = findViewById(R.id.ll_OTP);
+
+        pref = new Preferences(this);
+
+        //custom loader
+        loader = new CustomLoader(this, android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+
+        View llmain = findViewById(R.id.llmain);
+        Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
+        llmain.startAnimation(animation);
+
+        tvSignupbtn = findViewById(R.id.tvSignupbtn);
+        tvSignupbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity3.this, Register.class));
+                overridePendingTransition(R.anim.slide_left, R.anim.slide_right);
+            }
+        });
+
+        tvForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity3.this, ForgotPassword.class));
+                overridePendingTransition(R.anim.slide_left, R.anim.slide_right);
+            }
+        });
+
+
+
+        tvLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ReferCode = etReferCode.getText().toString();
+
+
+                if (etEmail.getText().toString().isEmpty()
+                        ||etEmail.getText().toString().length()!=10
+                        ||(!etEmail.getText().toString().startsWith("6")
+                        && !etEmail.getText().toString().startsWith("7") &&
+                !etEmail.getText().toString().startsWith("8")&&
+                !etEmail.getText().toString().startsWith("9"))) {
+
+                    Toasty.warning(LoginActivity3.this, "Please Enter valid mobile number", Toast.LENGTH_LONG, true).show();
+
+                }   /*else if (etPassword.getText().toString().isEmpty()) {
+
+                    Toasty.warning(LoginActivity.this, "Please Enter Password", Toast.LENGTH_LONG, true).show();
+                } */
+                else {
+                    if (Utils.isNetworkConnectedMainThred(LoginActivity3.this)) {
+                        loader.show();
+                        loader.setCancelable(false);
+                        loader.setCanceledOnTouchOutside(true);
+//                        HitUserLogin login = new HitUserLogin();
+//                        login.execute();
+
+                        HitGetLoginOTP login = new HitGetLoginOTP();
+                        login.execute();
+                    }
+                    else {
+                        Toasty.error(LoginActivity3.this, "No internet access", Toast.LENGTH_SHORT, true).show();
+                    }
+                }
+            }
+        });
+    }
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        if (hasFocus && playAnimations) {
+            showOtherItems();
+            playAnimations = false;
+        }
+    }
+
+
+    public class HitUserLogin extends AsyncTask<String, Void, Void> {
+
+        String displayText;
+        String msg;
+
+        @Override
+        protected Void doInBackground(String... params) {
+
+            // displayText = WebService.GetCategory("-1", "GetCategory");
+            displayText = WebService.Login(etEmail.getText().toString(), etPassword.getText().toString(), "Login");
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+
+            loader.dismiss();
+
+            Log.e("displayyyyy", displayText);
+
+            if (displayText != "" && displayText != null && displayText != "connection fault" && !displayText.contains("recvfrom failed: ECONNRESET (Connection reset by peer)")) {
+                try {
+                    JSONObject jsonObject = new JSONObject(displayText);
+                    JSONArray jsonArray = jsonObject.getJSONArray("Response");
+
+                   // Log.e("jarray123", "" + jsonArray);
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject object = jsonArray.getJSONObject(i);
+                        if (object.getString("Response").equalsIgnoreCase("true")) {
+                            pref.set(AppSettings.CustomerID, object.getString("CustomerID"));
+                            pref.set(AppSettings.Phone1, object.getString("Phone1"));
+                            pref.set(AppSettings.firstName, object.getString("firstName"));
+                            pref.set(AppSettings.Gender, object.getString("Gender"));
+                            pref.set(AppSettings.Email, object.getString("Email"));
+                            pref.set(AppSettings.ReferralValue, object.getString("referCode"));
+                            pref.commit();
+                            Toasty.success(LoginActivity3.this,"Login Successfull",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity3.this, DrawerActivity.class).putExtra("page", "home"));
+                        }
+                        else {
+                             if (jsonArray!=null && jsonArray.length()!=0  ){
+                                 JSONObject objectq = jsonArray.getJSONObject(0);
+                                 Toasty.error(LoginActivity3.this, objectq.getString("CustomerID"), Toast.LENGTH_SHORT, true).show();
+                             }
+                             else{
+                                 Toasty.error(LoginActivity3.this, " Some thing went wrong", Toast.LENGTH_SHORT, true).show();
+                             }
+
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+        @Override
+        protected void onProgressUpdate(Void... values) {
+        }
+    }
+    public class HitGetLoginOTP extends AsyncTask<String, Void, Void> {
+
+        String displayText;
+        String msg;
+
+        @Override
+        protected Void doInBackground(String... params) {
+
+            // displayText = WebService.GetCategory("-1", "GetCategory");
+            displayText = WebService.HitGetLoginOTP(etEmail.getText().toString(),  "getOTPLogin");
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+
+            loader.dismiss();
+
+            Log.e("displayyyyy", displayText);
+
+            if (displayText != "" && displayText != null && displayText != "connection fault" && !displayText.contains("recvfrom failed: ECONNRESET (Connection reset by peer)")) {
+                try {
+                    JSONObject jsonObject = new JSONObject(displayText);
+                    JSONObject jsonArray = jsonObject.getJSONObject("Response");
+
+                   // Log.e("jarray123", "" + jsonArray);
+                   // {"Response":{"Status":"True","otpR":"7547"}}
+
+///CustomerID
+                        if (jsonArray.getString("Status").equalsIgnoreCase("True")) {
+                           // jsonArray.getString("otpR")
+                           // Toasty.success(LoginActivity.this,"Login Successfull",Toast.LENGTH_SHORT).show();
+                           // ll_nmber.setVisibility(View.GONE);
+                            //ll_OTP.setVisibility(View.VISIBLE);
+                            Log.e("sfndfhjdkf", "///"+ReferCode);
+                           startActivity(new Intent(LoginActivity3.this, OTP.class)
+                                   .putExtra("page", "login")
+                                   .putExtra("referCode", ReferCode)
+                                   .putExtra("OTP", jsonArray.getString("otpR"))
+                           );
+                           // finish();
+                        }
+                        else  {
+                            HitGetOTP HitGetOTP= new HitGetOTP();
+                            HitGetOTP.execute();
+                           /// T oasty.error(LoginActivity.this,""+  jsonArray.getString("Status"), Toast.LENGTH_SHORT, true).show();
+
+
+                        }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+        @Override
+        protected void onProgressUpdate(Void... values) {
+        }
+    }
+    public class HitGetOTP extends AsyncTask<String, Void, Void> {
+
+        String displayText;
+
+        String msg;
+
+        @Override
+        protected Void doInBackground(String... params) {
+
+                displayText = WebService.GetOTP(LoginActivity3.etEmail.getText().toString(), "getOTP");
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+
+            loader.dismiss();
+
+            Log.e("getResndOTP", "getResndOTP");
+
+            if (displayText != "" && displayText != null && displayText != "connection fault" && !displayText.contains("recvfrom failed: ECONNRESET (Connection reset by peer)")) {
+                try {
+                 JSONObject   jsonObject = new JSONObject(displayText);
+
+                    JSONObject object=jsonObject.getJSONObject("Response");
+
+                    if(object.getString("Status").equalsIgnoreCase("True"))
+                    {
+
+                        startActivity(new Intent(LoginActivity3.this, OTP.class)
+                                .putExtra("page", "Reg")
+                                .putExtra("referCode", ReferCode)
+                                .putExtra("mob", LoginActivity3.etEmail.getText().toString())
+                                .putExtra("OTP", object.getString("otpR"))
+                        );
+                        Toasty.success(LoginActivity3.this,"Otp send to your registered mobile number ",Toast.LENGTH_SHORT).show();
+                        //requestSMSPermission();
+                        // new SmsReceiver().setEditText(et1,et2,et3,et4);
+                        //  fetchOTP();
+                    }
+                    else
+                    {
+                       // Toasty.error(LoginActivity.this,"Phone Number is already registered",Toast.LENGTH_SHORT).show();
+                    }
+
+                    Log.e("jsonobject123",jsonObject.toString());
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+        }
+    }
+    private void showOtherItems() {
+        float startXhello = 0 - llmain.getWidth();
+        float endXhello = llmain.getX();
+        ObjectAnimator Animhello = ObjectAnimator.ofFloat(llmain, View.X, startXhello, endXhello);
+        Animhello.setDuration(1000);
+        llmain.setVisibility(View.VISIBLE);
+        Animhello.start();
+    }
+}

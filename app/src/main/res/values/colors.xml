@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ED1A63</color>
+    <color name="colorPrimaryDark">#ED1A63</color>
+    <color name="colorButton">#ED1A63</color>
+    <color name="colorPrimaryLight">#b3e5fc</color>
+    <color name="colorPrimarybgLight">#E8F4FA</color>
+    <color name="colorAccent">#0F405A</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="cardviewBackground">#F2F5FA</color>
+    <color name="login_signup_edithint_color">#802c2c4c</color>
+    <color name="black_trans">#99000000</color>
+    <color name="gmail_lable_color">#B10420</color>
+    <color name="white_off">#F5F5F5</color>
+    <color name="per_off">#666666</color>
+    <color name="per_bg">#EEEEEE</color>
+    <color name="dark_grey">#9d9b9b</color>
+    <color name="fontblack">#222222</color>
+    <color name="newfont">#666666</color>
+    <color name="grey">#edecec</color>
+    <color name="greenprice">#f55d2c</color>
+    <color name="reviews">#878787</color>
+    <color name="grey_light">#E0E0E0</color>
+    <color name="myblack">#414a4c</color>
+    <color name="blacktrans">#90000000</color>
+    <color name="textgrey">#a4a6a8</color>
+    <color name="colorfont1">#000015</color>
+    <color name="textcolor">#717171</color>
+    <color name="colorblacktrans">#696969</color>
+    <color name="MatishBlack">#333333</color>
+    <color name="bottom_bar_inactive">#5A5A5A</color>
+    <color name="bottom_bar_active">@color/colorPrimary</color>
+</resources>
