@@ -22,12 +22,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+<!--        <activity-->
+<!--            android:name=".Activities.ProductListingActivity"-->
+<!--            android:exported="false" />-->
         <activity
-            android:name=".Activities.ProductListingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddAddressActivity"
-            android:exported="false" />
+            android:name=".Activities.address.AddAddressActivity"
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".Activities.FilterActivity"
             android:exported="false" />
@@ -171,7 +172,6 @@
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".Activities.WebViewActivity" />
-        <activity android:name=".Activities.address.AddAddressActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
